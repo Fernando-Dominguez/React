@@ -3,7 +3,7 @@ export const CardWidget = () => {
   return (
     <div>
       <span>10</span>
-      <FaShoppingCart color="red" />
+      <FaShoppingCart color="green" />
     </div>
   );
 };
