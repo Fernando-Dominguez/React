@@ -1,9 +1,10 @@
-import { FaShoppingCart } from "react-icons/fa";
-import { Counter } from "./Counter";
+import { ItemCountContainer } from "./ItemCount/ItemCountContainer";
+
 export const CardWidget = () => {
   return (
     <div>
-      <Counter />
+      <h3>ItemCountContainer</h3>
+      {<ItemCountContainer stock={3} />}
     </div>
   );
 };
