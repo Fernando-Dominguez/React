@@ -1,9 +1,10 @@
-export const ProducCard = ({ titulo, desc, precio }) => {
+export const ProducCard = ({img, title, desc, price }) => {
   return (
     <div>
-      <h2>{titulo}</h2>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
       <h3>{desc}</h3>
-      <h3>{precio}</h3>
+      <h3>{price}</h3>
     </div>
   );
 };

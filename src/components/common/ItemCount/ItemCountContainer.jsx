@@ -3,8 +3,8 @@ import { ItemCount } from "./ItemCount";
 import { useState } from "react";
 
 export const ItemCountContainer = ({ stock }) => {
-  console.log(stock);
-  const [counter, setCounter] = useState(1);
+/*   console.log(stock);
+ */  const [counter, setCounter] = useState(1);
 
   const sumar = () => {
     if (counter < stock) {
