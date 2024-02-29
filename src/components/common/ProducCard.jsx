@@ -1,10 +1,21 @@
-export const ProducCard = ({img, title, desc, price }) => {
+import { Link } from "react-router-dom";
+import "./ProducCard.css";
+export const ProducCard = ({ img, title, desc, price, id }) => {
   return (
-    <div>
-      <img src={img} alt={title} />
-      <h2>{title}</h2>
-      <h3>{desc}</h3>
-      <h3>{price}</h3>
+    <div className="CardsCont">
+      <div className="containerCard">
+        <img src={img} alt={title} className="imageCard" />
+        <div className="detallesCard">
+          <h3>{title}</h3>
+          <p>{desc}</p>
+          <span>${price}.-</span>
+        </div>
+        <div className="footerCard">
+          <Link to={`/item/${id}`}>
+            <button>Ver detalle</button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

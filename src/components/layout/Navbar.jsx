@@ -1,19 +1,17 @@
-import { CardWidget } from "../common/CardWidget";
-
+import { Link } from "react-router-dom";
+import { CartWidget } from "../common/CartWidget";
+import "./Navbar.css"
 export const Navbar = () => {
   return (
     <>
-      <nav>
-        <h2>Estampando</h2>
-        <ul>
-          <li>Todo</li>
-          <li>Ecobolsas</li>
-          <li>Boligrafos</li>
+      <nav className="navBar">
+        <Link to="/" className="logoEmpresa">Boligrafos</Link>
+        <ul className="menuCategorias">
+          <Link to="/"><li>Todo</li></Link>
+          <Link to="/category/ecologicas"><li>Ecologicas</li></Link>
+          <Link to="/category/metalicos"><li>Metalicos</li></Link>
         </ul>
-        <div>
-          <h4>Carrito</h4>
-          <CardWidget />
-        </div>
+        <CartWidget />
       </nav>
     </>
   );

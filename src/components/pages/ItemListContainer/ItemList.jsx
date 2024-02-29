@@ -1,20 +1,22 @@
 import { ProducCard } from "../../common/ProducCard";
-
-export const ItemList = ({ items }) => {
-  console.log(items);
+import "./ItemListContainer.css";
+export const ItemList = ({ products }) => {
   return (
     <>
-      {items.map(({ id, imageUrl, title, description, price }) => {
-        return (
-          <ProducCard
-            key={id}
-            img={imageUrl}
-            title={title}
-            desc={description}
-            price={price}
-          />
-        );
-      })}
+      <div className="cardContainer">
+        {products.map(({ id, imageUrl, title, description, price }) => {
+          return (
+            <ProducCard
+              key={id}
+              img={imageUrl}
+              title={title}
+              desc={description}
+              price={price}
+              id={id}
+            />
+          );
+        })}{" "}
+      </div>
     </>
   );
 };
