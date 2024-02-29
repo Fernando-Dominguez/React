@@ -1,12 +1,14 @@
-export const ItemCount = ({ counter, restar, sumar }) => {
+export const ItemCount = ({ counter, sumar, restar }) => {
   return (
     <>
-      <button onClick={restar} disabled={counter > 1 ? false : true}>
-        -
-      </button>
-      <h3>{counter}</h3>
-      <button onClick={sumar}>+</button>
-      <button>Agregar al Carrito</button>
+      <div>
+        <button onClick={sumar}>sumar</button>
+        <h2> {counter} </h2>
+        <button onClick={restar} disabled={counter === 1 ? true : false}>
+          restar
+        </button>
+        <button>agregar al carrito</button>
+      </div>
     </>
   );
 };

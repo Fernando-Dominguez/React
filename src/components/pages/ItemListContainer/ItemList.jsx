@@ -1,10 +1,9 @@
 import { ProducCard } from "../../common/ProducCard";
 
-export const ItemList = ({ items }) => {
-  console.log(items);
+export const ItemList = ({ products }) => {
   return (
     <>
-      {items.map(({ id, imageUrl, title, description, price }) => {
+      {products.map(({ id, imageUrl, title, description, price }) => {
         return (
           <ProducCard
             key={id}
@@ -12,6 +11,7 @@ export const ItemList = ({ items }) => {
             title={title}
             desc={description}
             price={price}
+            id={id}
           />
         );
       })}
