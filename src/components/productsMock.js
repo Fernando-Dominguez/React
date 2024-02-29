@@ -23,7 +23,7 @@ export let products = [
     price: 209,
     description: "Metático de trazo fino y de color negro",
     imageUrl: "https://res.cloudinary.com/dmlqg9nvh/image/upload/v1709188378/React%20JS/boligrafos/boligrafo-tucson-plateado_rzdnfu.jpg",
-    stock: 7,
+    stock: 8,
     category: "metalicos",
   },
   {
