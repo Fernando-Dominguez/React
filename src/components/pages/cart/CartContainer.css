@@ -1,0 +1,12 @@
+.carritoContainer{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+    align-items: center;
+}
+
+.carritoContainer button{
+    background-color: #4682B4;
+    color: white;
+}

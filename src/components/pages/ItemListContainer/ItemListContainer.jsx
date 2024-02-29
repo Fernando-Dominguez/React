@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getProducts } from "../../productsMock";
 import { useEffect, useState } from "react";
 import { ItemList } from "./ItemList";
-
+import "./ItemListContainer.css"
 export const ItemListContainer = () => {
   const { category } = useParams();
   const [products, setProducts] = useState([]);
@@ -24,6 +24,6 @@ export const ItemListContainer = () => {
     });
   }, [category]);
 
-  return <>{isLoading ? <h2>Cargando productos...</h2> : <ItemList products={products} />
+  return <>{isLoading ? <div className="cargando"><img src="https://res.cloudinary.com/dmlqg9nvh/image/upload/v1709208230/React%20JS/Loading_icon_h20kjn.gif" alt="spiner animado" /></div> : <ItemList products={products} />
       }</>;
 };

@@ -3,12 +3,11 @@ import { ItemListContainer } from "./components/pages/ItemListContainer/ItemList
 import { CartContainer } from "./components/pages/cart/CartContainer";
 import { Navbar } from "./components/layout/Navbar";
 import { ItemDetailContainer } from "./components/pages/itemDetailContainer/ItemDetailContainer";
-
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <Navbar />
-      <Routes>
+      <Routes >
         <Route path="/" element={<ItemListContainer />} />
         <Route path="/category/:category" element={<ItemListContainer />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />

@@ -1,7 +1,7 @@
 export const ItemCount = ({ counter, sumar, restar }) => {
   return (
     <>
-      <div>
+      <div className="countContainer">
         <button onClick={sumar}>sumar</button>
         <h2> {counter} </h2>
         <button onClick={restar} disabled={counter === 1 ? true : false}>

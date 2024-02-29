@@ -18,7 +18,11 @@ export const ItemDetailContainer = () => {
 
   return (
     <>
-      {isLoading ? <h2>Cargando producto...</h2> : <ItemDetail item={item} />}
+      {isLoading ? (
+        <div className="cargando"><img src="https://res.cloudinary.com/dmlqg9nvh/image/upload/v1709208230/React%20JS/Loading_icon_h20kjn.gif" alt="spiner animado" /></div>
+      ) : (
+        <ItemDetail item={item} />
+      )}
     </>
   );
 };

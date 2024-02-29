@@ -1,0 +1,35 @@
+.cardsContainer {
+    display: flex;
+}
+
+.detallesContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.descContainer {
+    padding: 40px;
+}
+
+.detallesContainer img {
+    width: 100%;
+    padding: 20px;
+}
+
+.detalleCard {
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+}
+
+.countContainer {
+
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
