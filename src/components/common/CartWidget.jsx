@@ -4,9 +4,12 @@ import { FaShoppingCart } from "react-icons/fa";
 export const CartWidget = () => {
   return (
     <>
-      <Link to="/cart">
-        <FaShoppingCart color="orange" />
-      </Link>
+      <div className="carritoMenu">
+        <Link to="/cart">
+          <FaShoppingCart color="orange" />
+        </Link>
+        <strong>4</strong>
+      </div>
     </>
   );
 };
