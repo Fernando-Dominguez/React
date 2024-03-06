@@ -16,12 +16,25 @@ export const ItemDetailContainer = () => {
     });
   }, []);
 
+  const onAdd = (cantidad) => {
+    let infoProducto = {
+      ...item,
+      quantity: cantidad
+    };
+    console.log(infoProducto)
+  };
+
   return (
     <>
       {isLoading ? (
-        <div className="cargando"><img src="https://res.cloudinary.com/dmlqg9nvh/image/upload/v1709208230/React%20JS/Loading_icon_h20kjn.gif" alt="spiner animado" /></div>
+        <div className="cargando">
+          <img
+            src="https://res.cloudinary.com/dmlqg9nvh/image/upload/v1709208230/React%20JS/Loading_icon_h20kjn.gif"
+            alt="spiner animado"
+          />
+        </div>
       ) : (
-        <ItemDetail item={item} />
+        <ItemDetail item={item} onAdd={onAdd} />
       )}
     </>
   );

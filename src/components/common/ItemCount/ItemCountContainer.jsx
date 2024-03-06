@@ -1,7 +1,7 @@
 import { ItemCount } from "./ItemCount";
 import { useState } from "react";
 
-export const ItemCountContainer = ({ stock }) => {
+export const ItemCountContainer = ({ stock, onAdd }) => {
    const [counter, setCounter] = useState(1);
 
   const sumar = () => {
@@ -21,7 +21,7 @@ export const ItemCountContainer = ({ stock }) => {
   };
   return (
     <div>
-      <ItemCount counter={counter} restar={restar} sumar={sumar} />
+      <ItemCount counter={counter} restar={restar} sumar={sumar} onAdd={onAdd} />
     </div>
   );
 };
