@@ -1,6 +1,5 @@
 export let products = [
-  {
-    id: "1",
+/*   {
     title: "EcoBoligráfo",
     price: 121,
     description: "Bolígrafo de cartón ecológicoTrazo fino y de color negro",
@@ -9,16 +8,14 @@ export let products = [
     category: "ecologicas",
   },
   {
-    id: "2",
     title: "Boligráfo Metálico retractil",
     price: 230,
     description: "Bolígrafo retractil con trazo mediano y de color azul",
     imageUrl: "https://res.cloudinary.com/dmlqg9nvh/image/upload/v1709188378/React%20JS/boligrafos/boligrafo-malibu-azul_csqoc3.jpg",
     stock: 5,
     category: "metalicos",
-  },
+  }, */
   {
-    id: "3",
     title: "Boligráfo Metalico fijo",
     price: 209,
     description: "Metático de trazo fino y de color negro",
@@ -27,7 +24,6 @@ export let products = [
     category: "metalicos",
   },
   {
-    id: "4",
     title: "EcoBoligráfo retractil",
     price: 130,
     description: "Ecológico de trazo fino, retractil y de color negro",
