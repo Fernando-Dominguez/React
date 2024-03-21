@@ -1,18 +1,38 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { CartWidget } from "../common/CartWidget";
-import "./Navbar.css"
+import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
+import DrawIcon from "@mui/icons-material/Draw";
 export const Navbar = () => {
   return (
     <>
-      <nav className="navBar">
-        <Link to="/" className="logoEmpresa">Boligrafos</Link>
-        <ul className="menuCategorias">
-          <Link to="/"><li>Todo</li></Link>
-          <Link to="/category/ecologicas"><li>Ecologicas</li></Link>
-          <Link to="/category/metalicos"><li>Metalicos</li></Link>
-        </ul>
-        <CartWidget />
-      </nav>
+      <AppBar position="static">
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          <Button color="inherit" sx={{ display: "flex" }}>
+            <DrawIcon sx={{ paddingRight: 1 }} />
+            <Typography variante="h6">BOLIGRAFOS</Typography>
+          </Button>
+          <Box>
+            <Button color="inherit" component={NavLink} to="/">
+              Todo
+            </Button>
+            <Button
+              color="inherit"
+              component={NavLink}
+              to="/category/ecologicas"
+            >
+              Ecologicos
+            </Button>
+            <Button
+              color="inherit"
+              component={NavLink}
+              to="/category/metalicos"
+            >
+              Metalicos
+            </Button>
+          </Box>
+          <CartWidget />
+        </Toolbar>
+      </AppBar>
     </>
   );
 };

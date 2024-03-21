@@ -1,8 +1,9 @@
+import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export const Checkout = ({ envioDeFormulario, capturar, orderId }) => {
   return (
-    <div>
+    <Box sx={{minHeight:"calc(100vh - 132.5px)"}}>
       {orderId ? (
         <div>
           <h1>Gracias por tu compra,e numero de orden es {orderId}</h1>
@@ -34,6 +35,6 @@ export const Checkout = ({ envioDeFormulario, capturar, orderId }) => {
           <button type="submit">enviar</button>
         </form>
       )}
-    </div>
+    </Box>
   );
 };

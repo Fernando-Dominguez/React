@@ -4,6 +4,7 @@ import { ItemDetail } from "./ItemDetail";
 import { CartContext } from "../../../context/CartContext";
 import { collection, doc, getDoc } from "firebase/firestore";
 import { db } from "../../../fireBaseConfig";
+import { Box, CircularProgress } from "@mui/material";
 
 export const ItemDetailContainer = () => {
   const { id } = useParams();
@@ -38,12 +39,16 @@ export const ItemDetailContainer = () => {
   return (
     <>
       {isLoading ? (
-        <div className="cargando">
-          <img
-            src="https://res.cloudinary.com/dmlqg9nvh/image/upload/v1709208230/React%20JS/Loading_icon_h20kjn.gif"
-            alt="spiner animado"
-          />
-        </div>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            minHeight: "calc(100vh - 132.5px)",
+            alignItems: "center",
+          }}
+        >
+          <CircularProgress size={100} />
+        </Box>
       ) : (
         <ItemDetail item={item} onAdd={onAdd} initial={initial} />
       )}

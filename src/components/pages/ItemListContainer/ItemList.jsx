@@ -1,10 +1,19 @@
-import { AgregarDocs } from "../../../agregarDocs";
+import { Container, Grid } from "@mui/material";
 import { ProducCard } from "../../common/ProducCard";
-import "./ItemListContainer.css";
+
 export const ItemList = ({ products }) => {
   return (
-    <>
-      <div className="cardContainer">
+    <Container>
+      <Grid
+        container
+        sx={{
+          minHeight: "calc(100vh - 116px)",
+        }}
+        spacing={2}
+        padding={4}
+        alignContent={"center"}
+        justifyContent={"center"}
+      >
         {products.map(({ id, imageUrl, title, description, price }) => {
           return (
             <ProducCard
@@ -16,8 +25,8 @@ export const ItemList = ({ products }) => {
               id={id}
             />
           );
-        })}{" "}
-      </div>
-    </>
+        })}
+      </Grid>
+    </Container>
   );
 };

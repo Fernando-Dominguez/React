@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ItemList } from "./ItemList";
-import "./ItemListContainer.css";
 import { db } from "../../../fireBaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
+import { Box, CircularProgress } from "@mui/material";
 
 export const ItemListContainer = () => {
   const { category } = useParams();
@@ -38,12 +38,16 @@ export const ItemListContainer = () => {
   return (
     <>
       {isLoading ? (
-        <div className="cargando">
-          <img
-            src="https://res.cloudinary.com/dmlqg9nvh/image/upload/v1709208230/React%20JS/Loading_icon_h20kjn.gif"
-            alt="spiner animado"
-          />
-        </div>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            minHeight: "calc(100vh - 132.5px)",
+            alignItems: "center",
+          }}
+        >
+          <CircularProgress size={100} />
+        </Box>
       ) : (
         <ItemList products={products} />
       )}

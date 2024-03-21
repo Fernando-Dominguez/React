@@ -1,21 +1,31 @@
+import {
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+} from "@mui/material";
 import { Link } from "react-router-dom";
-import "./ProducCard.css";
+
 export const ProducCard = ({ img, title, desc, price, id }) => {
   return (
-    <div className="CardsCont">
-      <div className="containerCard">
-        <img src={img} alt={title} className="imageCard" />
-        <div className="detallesCard">
-          <h3>{title}</h3>
-          <p>{desc}</p>
-          <span>${price}.-</span>
-        </div>
-        <div className="footerCard">
-          <Link to={`/item/${id}`}>
-            <button>Ver detalle</button>
-          </Link>
-        </div>
-      </div>
-    </div>
+    <Grid item xs={12} sm={6} md={3}>
+      <Card sx={{ borderRadius: 5 }} align="center">
+        <CardMedia component="img" height="auto" image={img} alt={title} />
+        <CardContent sx={{ backgroundColor: "#f4f8f9" }}>
+          <Typography variant="h5" fontWeight={700}>
+            {title}
+          </Typography>
+          <Typography variant="body2">{desc}</Typography>
+          <Typography variant="h5" paddingTop={2} fontWeight={900}>
+            $ {price}
+          </Typography>
+        </CardContent>
+        <Button component={Link} to={`/item/${id}`}>
+          DETALLES
+        </Button>
+      </Card>
+    </Grid>
   );
 };
