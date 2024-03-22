@@ -1,7 +1,7 @@
 import { ItemListContainer } from "../pages/ItemListContainer/ItemListContainer";
 import { CartContainer } from "../pages/cart/CartContainer";
 import { CheckoutContainer } from "../pages/checkout/CheckoutContainer";
-import { ItemDetailContainer } from "../pages/itemDetailContainer/ItemDetailContainer";
+import { ItemDetailContainer } from "../pages/ItemDetailContainer/ItemDetailContainer";
 
 export const routes = [
     {
