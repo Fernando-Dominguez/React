@@ -13,8 +13,9 @@ export const CheckoutContainer = () => {
 
   const [orderId, setOrderId] = useState(null);
 
-  const { cart, getTotalPrice } = useContext(CartContext);
+  const { cart, getTotalPrice, getTotalItems, clearCart } = useContext(CartContext);
   let totalPrice = getTotalPrice();
+  let totalItems = getTotalItems();
   const envioDeFormulario = (e) => {
     e.preventDefault();
 
@@ -29,8 +30,9 @@ export const CheckoutContainer = () => {
 
     cart.forEach((product) => {
       let refDoc = doc(db, "products", product.id);
-      updateDoc(refDoc, {stock: product.stock - product.quantity});
+      updateDoc(refDoc, { stock: product.stock - product.quantity });
     });
+    clearCart();
   };
 
   const capturar = (e) => {
@@ -40,6 +42,9 @@ export const CheckoutContainer = () => {
   return (
     <div>
       <Checkout
+        userInfo={userInfo}
+        total={totalPrice}
+        totalItems={totalItems}
         envioDeFormulario={envioDeFormulario}
         capturar={capturar}
         orderId={orderId}

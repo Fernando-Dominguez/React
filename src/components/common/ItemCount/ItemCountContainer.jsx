@@ -11,7 +11,7 @@ export const ItemCountContainer = ({ stock, onAdd, initial = 1 }) => {
     } else {
       Swal.fire({
         icon: "warning",
-        title: stock + " es el máximo de unidades disponibles en stock",
+        title: "Máximo de unidades disponibles en stock son: " + stock,
         showConfirmButton: false,
       });
     }
@@ -21,7 +21,6 @@ export const ItemCountContainer = ({ stock, onAdd, initial = 1 }) => {
     if (counter > 1) {
       setCounter(counter - 1);
     }
-    
   };
   return (
     <div>

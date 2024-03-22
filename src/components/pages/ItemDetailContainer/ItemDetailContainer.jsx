@@ -28,12 +28,12 @@ export const ItemDetailContainer = () => {
       .finally(() => setIsLoading(false));
   }, [id]);
 
-  const onAdd = (cantidad) => {
+  const onAdd = (cantidad, msjAlert) => {
     let infoProducto = {
       ...item,
       quantity: cantidad,
     };
-    addToCart(infoProducto);
+    addToCart(infoProducto, msjAlert);
   };
 
   return (

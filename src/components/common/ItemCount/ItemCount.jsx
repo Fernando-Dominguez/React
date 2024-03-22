@@ -31,7 +31,7 @@ export const ItemCount = ({ counter, sumar, restar, onAdd }) => {
           fullWidth
           sx={{ marginTop: 1 }}
           onClick={() => {
-            onAdd(counter);
+            onAdd(counter, false);
           }}
         >
           Comprar Ahora
@@ -42,10 +42,11 @@ export const ItemCount = ({ counter, sumar, restar, onAdd }) => {
         fullWidth
         sx={{ marginTop: 1 }}
         onClick={() => {
-          onAdd(counter);
+          onAdd(counter, true);
+
         }}
       >
-        agregar al carrito
+        Agregar al carrito
       </Button>
     </>
   );

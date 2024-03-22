@@ -7,9 +7,16 @@ export const Navbar = () => {
     <>
       <AppBar position="static">
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Button color="inherit" sx={{ display: "flex" }}>
-            <DrawIcon sx={{ paddingRight: 1 }} />
-            <Typography variante="h6">BOLIGRAFOS</Typography>
+          <Button
+            color="inherit"
+            component={NavLink}
+            to="/"
+            sx={{ display: "flex" }}
+          >
+            <DrawIcon sx={{ paddingRight: 1, fontSize: "3rem" }} />
+            <Typography variante="h6" fontSize="1.5rem" fontWeight={700}>
+              BOLIGRAFOS
+            </Typography>
           </Button>
           <Box>
             <Button color="inherit" component={NavLink} to="/">

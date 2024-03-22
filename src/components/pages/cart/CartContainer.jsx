@@ -29,7 +29,13 @@ export const CartContainer = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         clearCart();
-        Swal.fire("Eliminado", "", "success");
+        Swal.fire({
+          icon: "success",
+          title: "Eliminado",
+          showConfirmButton: false,
+          timer: 1500,
+          position: "center",
+        });
       }
     });
   };
