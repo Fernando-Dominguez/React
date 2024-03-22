@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { CartWidget } from "../common/CartWidget";
 import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
 import DrawIcon from "@mui/icons-material/Draw";
+import { menuNavigation } from "../router/menuNavigation";
 export const Navbar = () => {
   return (
     <>
@@ -19,23 +20,11 @@ export const Navbar = () => {
             </Typography>
           </Button>
           <Box>
-            <Button color="inherit" component={NavLink} to="/">
-              Todo
-            </Button>
-            <Button
-              color="inherit"
-              component={NavLink}
-              to="/category/ecologicas"
-            >
-              Ecologicos
-            </Button>
-            <Button
-              color="inherit"
-              component={NavLink}
-              to="/category/metalicos"
-            >
-              Metalicos
-            </Button>
+            {menuNavigation.map(({ id, text, path }) => (
+              <Button key={id} color="inherit" component={NavLink} to={path}>
+                {text}
+              </Button>
+            ))}
           </Box>
           <CartWidget />
         </Toolbar>

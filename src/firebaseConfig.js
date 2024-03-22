@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore"
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAkHgOJxSb29wIXgf_6VD3hkZsqnK0b_hI",
-    authDomain: "entrega-final-react-fd.firebaseapp.com",
-    projectId: "entrega-final-react-fd",
-    storageBucket: "entrega-final-react-fd.appspot.com",
-    messagingSenderId: "13772819212",
-    appId: "1:13772819212:web:517dffd0644477531ad729"
+    apiKey: import.meta.env.VITE_APIKEY,
+    authDomain: import.meta.env.VITE_AUTHDOMAIN,
+    projectId: import.meta.env.VITE_PROJECTID,
+    storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGIBGSANDERID,
+    appId: import.meta.env.VITE_APPID
 };
 
 
