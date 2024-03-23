@@ -91,7 +91,7 @@ export const CartContainer = () => {
               </Box>
             ))}
             <Box textAlign={"center"} padding={1}>
-              <Button variant="text" onClick={limpiarConAlerta}>
+              <Button variant="text" onClick={limpiarConAlerta} disabled={totalItems === 0 ? true : false}>
                 Vaciar carrito
               </Button>
             </Box>
