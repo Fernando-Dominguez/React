@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import {
@@ -128,15 +128,26 @@ export const CartContainer = () => {
                 </Typography>
                 <Typography variant="h6">$ {total}</Typography>
               </Box>
-              <Link to="/checkout">
-                <Button
-                  variant="contained"
-                  fullWidth
-                  sx={{ margin: "30px 0px 20px" }}
-                >
-                  Finalizar compra
-                </Button>
-              </Link>
+
+              <Button
+                component={NavLink}
+                to={"/checkout"}
+                disabled={totalItems === 0 ? true : false}
+                variant="contained"
+                fullWidth
+                sx={{ margin: "30px 0px 5px" }}
+              >
+                Finalizar compra
+              </Button>
+              <Button
+                component={NavLink}
+                to={"/"}
+                variant="outlined"
+                fullWidth
+                sx={{ margin: "0px 0px 20px" }}
+              >
+                Seguir comprando
+              </Button>
             </Box>
           </Card>
         </Grid>
