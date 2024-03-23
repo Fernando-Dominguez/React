@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import {
@@ -11,7 +11,6 @@ import {
   Typography,
 } from "@mui/material";
 import Swal from "sweetalert2";
-import { ItemCount } from "../../common/ItemCount/ItemCount";
 
 export const CartContainer = () => {
   const { cart, clearCart, removeById, getTotalPrice, getTotalItems } =

@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Checkout } from "./Checkout";
 import { CartContext } from "../../../context/CartContext";
 import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
-import { db } from "../../../fireBaseConfig";
+import { db } from "../../../firebaseConfig";
 
 export const CheckoutContainer = () => {
   const [userInfo, setUserInfo] = useState({

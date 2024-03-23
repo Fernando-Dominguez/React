@@ -9,7 +9,6 @@ import {
   Typography,
 } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
 export const Checkout = ({
   envioDeFormulario,
@@ -114,8 +113,6 @@ export const Checkout = ({
                     variant="outlined"
                     name="nombre"
                     onChange={capturar}
-                    /* error={errors.nombre ? true : false}
-                    helperText={errors.nombre} */
                   />
 
                   <TextField
@@ -123,8 +120,6 @@ export const Checkout = ({
                     variant="outlined"
                     name="telefono"
                     onChange={capturar}
-                    /* error={errors.telefono ? true : false}
-                    helperText={errors.telefono} */
                   />
 
                   <TextField
@@ -132,8 +127,6 @@ export const Checkout = ({
                     variant="outlined"
                     name="email"
                     onChange={capturar}
-                    /* error={errors.email ? true : false}
-                    helperText={errors.email} */
                   />
                   <Box
                     sx={{
@@ -195,28 +188,3 @@ export const Checkout = ({
     </Box>
   );
 };
-
-/* <form onSubmit={envioDeFormulario}>
-          <input
-            type="text"
-            placeholder="Ingresa tu nombre"
-            onChange={capturar}
-            name="name"
-          />
-
-          <input
-            type="text"
-            placeholder="Ingresa tu teléfono"
-            onChange={capturar}
-            name="phone"
-          />
-
-          <input
-            type="text"
-            placeholder="Ingresa tu mail"
-            onChange={capturar}
-            name="mail"
-          />
-
-          <button type="submit">enviar</button>
-        </form> */

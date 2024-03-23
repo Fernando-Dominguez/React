@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { ItemDetail } from "./ItemDetail";
 import { CartContext } from "../../../context/CartContext";
 import { collection, doc, getDoc } from "firebase/firestore";
-import { db } from "../../../fireBaseConfig";
+import { db } from "../../../firebaseConfig";
 import { Box, CircularProgress } from "@mui/material";
 
 export const ItemDetailContainer = () => {
