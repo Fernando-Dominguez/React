@@ -29,6 +29,7 @@ export const ItemCountContainer = ({ stock, onAdd, initial = 1 }) => {
         restar={restar}
         sumar={sumar}
         onAdd={onAdd}
+        stock={stock}
       />
     </div>
   );

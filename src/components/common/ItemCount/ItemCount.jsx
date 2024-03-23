@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
-export const ItemCount = ({ counter, sumar, restar, onAdd }) => {
+export const ItemCount = ({ counter, sumar, restar, onAdd, stock }) => {
   return (
     <>
       <Box
@@ -19,31 +19,35 @@ export const ItemCount = ({ counter, sumar, restar, onAdd }) => {
         >
           -
         </Button>
-        <Typography> {counter} </Typography>
-        <Button variant="outlined" sx={{ margin: 1 }} onClick={sumar}>
+        <Typography> {stock === 0 ? 0 : counter} </Typography>
+        <Button variant="outlined" sx={{ margin: 1 }} onClick={sumar} 
+          disabled={stock === 0 ? true : false}>
           +
         </Button>
       </Box>
-      <Link to="/checkout">
-        <Button
-          variant="contained"
-          fullWidth
-          sx={{ marginTop: 1 }}
-          onClick={() => {
-            onAdd(counter, false);
-          }}
-        >
-          Comprar Ahora
-        </Button>
-      </Link>
+
+      <Button
+        component={NavLink}
+        to={"/checkout"}
+        variant="contained"
+        fullWidth
+        sx={{ marginTop: 1 }}
+        onClick={() => {
+          onAdd(counter, false);
+        }}
+        disabled={stock === 0 && true}
+      >
+        Comprar Ahora
+      </Button>
+
       <Button
         variant="outlined"
         fullWidth
         sx={{ marginTop: 1 }}
         onClick={() => {
           onAdd(counter, true);
-
         }}
+        disabled={stock === 0 && true}
       >
         Agregar al carrito
       </Button>

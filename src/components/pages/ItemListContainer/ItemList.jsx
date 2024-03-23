@@ -14,7 +14,7 @@ export const ItemList = ({ products }) => {
         alignContent={"center"}
         justifyContent={"center"}
       >
-        {products.map(({ id, imageUrl, title, description, price }) => {
+        {products.map(({ id, imageUrl, title, description, price, stock }) => {
           return (
             <ProducCard
               key={id}
@@ -23,6 +23,7 @@ export const ItemList = ({ products }) => {
               desc={description}
               price={price}
               id={id}
+              stock={stock}
             />
           );
         })}
