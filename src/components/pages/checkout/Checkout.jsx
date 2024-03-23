@@ -8,7 +8,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
 export const Checkout = ({
@@ -62,9 +62,6 @@ export const Checkout = ({
                 <Typography variant="h6" paddingTop={2} fontWeight={900}>
                   {orderId}
                 </Typography>
-                <Button onClick={navigator.clipboard.writeText(orderId)}>
-                  <ContentCopyIcon />
-                </Button>
               </Box>
               <Button
                 variant="contained"
