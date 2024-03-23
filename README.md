@@ -33,6 +33,20 @@ Este proyecto es una aplicación de comercio electrónico que te permite explora
 
 https://react-three-kappa.vercel.app/
 
+## Requisitos Previos
+
+Solicitar las siguientes variables de entorno:
+
+- **Firebase:** Variables de entorno con tus credenciales:
+  - `apiKey: import.meta.env.VITE_APIKEY`
+  - `authDomain: import.meta.env.VITE_AUTHDOMAIN`
+  - `projectId: import.meta.env.VITE_PROJECTID`
+  - `storageBucket: import.meta.env.VITE_STORAGEBUCKET`
+  - `messagingSenderId: import.meta.env.VITE_MESSAGIBGSANDERID`
+  - `appId: import.meta.env.VITE_APPID`
+- **Vercel (Opcional):** Si planeas implementar la aplicación en Vercel, puedes configurar las siguientes variables de entorno con tu token de acceso de Vercel:
+  - `VERCEL_TOKEN`
+
 
 ## Contribución
 
@@ -48,4 +62,13 @@ https://react-three-kappa.vercel.app/
 Si tienes alguna pregunta, sugerencia o problema, no dudes en ponerte en contacto con nosotros en fernando.od@gmail.com.
 
 ¡Gracias por tu interés en nuestro Ecommerce de Bolígrafos!
+
+
+
+
+
+
+
+
+
 
