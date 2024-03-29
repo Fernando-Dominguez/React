@@ -5,26 +5,23 @@ import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
 import { db } from "../../../firebaseConfig";
 
 export const CheckoutContainer = () => {
-  const [userInfo, setUserInfo] = useState({
-    name: "",
-    phone: "",
-    mail: "",
-  });
 
   const [orderId, setOrderId] = useState(null);
+  const [userInfo, setUserInfo] = useState(null);
 
-  const { cart, getTotalPrice, getTotalItems, clearCart } = useContext(CartContext);
-  let totalPrice = getTotalPrice();
-  let totalItems = getTotalItems();
-  const envioDeFormulario = (e) => {
-    e.preventDefault();
+  const { cart, getTotalItems, getTotalPrice, clearCart } =
+    useContext(CartContext);
+  const totalPrice = getTotalPrice();
+  const totalItems = getTotalItems();
+
+  const procesandoOrden = (data) => {
+    setUserInfo(data);
 
     let order = {
-      buyer: userInfo,
+      buyer: data,
       item: cart,
       total: totalPrice,
     };
-
     let ordersCollection = collection(db, "orders");
     addDoc(ordersCollection, order).then((res) => setOrderId(res.id));
 
@@ -35,19 +32,14 @@ export const CheckoutContainer = () => {
     clearCart();
   };
 
-  const capturar = (e) => {
-    setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
-  };
-
   return (
     <div>
       <Checkout
         userInfo={userInfo}
+        orderId={orderId}
         total={totalPrice}
         totalItems={totalItems}
-        envioDeFormulario={envioDeFormulario}
-        capturar={capturar}
-        orderId={orderId}
+        procesandoOrden={procesandoOrden}
       />
     </div>
   );

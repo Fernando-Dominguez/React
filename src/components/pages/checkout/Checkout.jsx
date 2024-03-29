@@ -5,19 +5,12 @@ import {
   CardContent,
   Container,
   Grid,
-  TextField,
   Typography,
 } from "@mui/material";
 import { NavLink } from "react-router-dom";
+import { FormFormik } from "../formFormik/FormFormik";
 
-export const Checkout = ({
-  envioDeFormulario,
-  capturar,
-  orderId,
-  totalItems,
-  total,
-  userInfo,
-}) => {
+export const Checkout = ({ total, totalItems, procesandoOrden, orderId, userInfo }) => {
   return (
     <Box sx={{ minHeight: "calc(100vh - 132.5px)" }}>
       {orderId ? (
@@ -97,56 +90,10 @@ export const Checkout = ({
                 <Typography variant="h6" padding={3} borderBottom={1}>
                   Orden de compra
                 </Typography>
-
-                <form
-                  onSubmit={envioDeFormulario}
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    width: "100%",
-                    gap: "20px",
-                    padding: "20px",
-                  }}
-                >
-                  <TextField
-                    label="Nombre *"
-                    variant="outlined"
-                    name="nombre"
-                    onChange={capturar}
-                  />
-
-                  <TextField
-                    label="Teléfono *"
-                    variant="outlined"
-                    name="telefono"
-                    onChange={capturar}
-                  />
-
-                  <TextField
-                    label="Email *"
-                    variant="outlined"
-                    name="email"
-                    onChange={capturar}
-                  />
-                  <Box
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "flex-end",
-                    }}
-                  >
-                    <Typography variant="caption" padding={1} flexGrow={1}>
-                      * Campo requerido.
-                    </Typography>
-                    <Button
-                      type="submit"
-                      variant="contained"
-                      sx={{ width: 200 }}
-                    >
-                      Realizar pedido
-                    </Button>
-                  </Box>
-                </form>
+                <FormFormik
+                  procesandoOrden={procesandoOrden}
+                  orderId={orderId}
+                />
               </Card>
             </Grid>
             <Grid item xs={12} sm={4}>
