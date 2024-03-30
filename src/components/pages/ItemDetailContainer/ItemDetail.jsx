@@ -1,10 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import { ItemCountContainer } from "../../common/ItemCount/ItemCountContainer";
 
 export const ItemDetail = ({ item, onAdd, initial }) => {
@@ -29,7 +23,7 @@ export const ItemDetail = ({ item, onAdd, initial }) => {
       >
         <CardMedia
           component="img"
-          height="auto"
+          height="85%"
           sx={{ width: "60%", margin: 2 }}
           image={item.imageUrl}
           alt={item.title}

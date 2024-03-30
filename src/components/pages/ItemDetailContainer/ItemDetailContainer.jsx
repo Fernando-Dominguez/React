@@ -4,7 +4,8 @@ import { ItemDetail } from "./ItemDetail";
 import { CartContext } from "../../../context/CartContext";
 import { collection, doc, getDoc } from "firebase/firestore";
 import { db } from "../../../firebaseConfig";
-import { Box, CircularProgress } from "@mui/material";
+import { Box, CircularProgress, Container, Grid } from "@mui/material";
+import { ItemSkeleton } from "../../common/ItemSkeleton";
 
 export const ItemDetailContainer = () => {
   const { id } = useParams();
@@ -35,23 +36,12 @@ export const ItemDetailContainer = () => {
     };
     addToCart(infoProducto, msjAlert);
   };
-
+  if (isLoading) {
+    return <ItemSkeleton />;
+  }
   return (
     <>
-      {isLoading ? (
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            minHeight: "calc(100vh - 132.5px)",
-            alignItems: "center",
-          }}
-        >
-          <CircularProgress size={100} />
-        </Box>
-      ) : (
-        <ItemDetail item={item} onAdd={onAdd} initial={initial} />
-      )}
+      <ItemDetail item={item} onAdd={onAdd} initial={initial} />
     </>
   );
 };
