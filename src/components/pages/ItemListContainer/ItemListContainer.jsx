@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { ItemList } from "./ItemList";
 import { db } from "../../../firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { Box, CircularProgress } from "@mui/material";
+import { Container, Grid } from "@mui/material";
+import { CardSkeleton } from "../../common/CardSkeleton";
 
 export const ItemListContainer = () => {
   const { category } = useParams();
@@ -35,22 +36,31 @@ export const ItemListContainer = () => {
       .finally(() => setIsLoading(false));
   }, [category]);
 
+  if (isLoading) {
+    return (
+      <Container>
+        <Grid
+          container
+          sx={{
+            minHeight: "calc(100vh - 116px)",
+          }}
+          spacing={2}
+          padding={4}
+          alignContent={"center"}
+          justifyContent={"center"}
+        >
+          <CardSkeleton />
+          <CardSkeleton />
+          <CardSkeleton />
+          <CardSkeleton />
+        </Grid>
+      </Container>
+    );
+  }
+
   return (
     <>
-      {isLoading ? (
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            minHeight: "calc(100vh - 132.5px)",
-            alignItems: "center",
-          }}
-        >
-          <CircularProgress size={100} />
-        </Box>
-      ) : (
-        <ItemList products={products} />
-      )}
+      <ItemList products={products} />
     </>
   );
 };
