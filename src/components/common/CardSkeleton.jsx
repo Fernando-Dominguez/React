@@ -1,6 +1,6 @@
 import { Grid, Skeleton, Stack } from "@mui/material";
 
-export const CartSkeleton = () => {
+export const CardSkeleton = () => {
   return (
     <Grid item xs={12} sm={6} md={3}>
       <Stack variant="rounded" width={"auto"} spacing={1}>
